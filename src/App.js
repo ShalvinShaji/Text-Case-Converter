@@ -11,7 +11,7 @@ function App() {
         <div className="col">
         
 
-          <Navbar logoName='Text Convertor' value='Tech' values='More'/>
+          <Navbar logoName='Text Case Convertor' value='Tech'/>
           <Textarea type='text'/>
 
         </div>
