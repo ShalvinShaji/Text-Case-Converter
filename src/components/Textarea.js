@@ -25,18 +25,24 @@ export default function Textarea(props) {
 
     }
 
-  const [text, setText] = useState("Enter the text here.");
+  const [text, setText] = useState("");
 
   return (
 <>
-<div>
+<div className='container'>
   <h3 className='mt-5'>Enter the {props.type} for conversion:</h3>
-  <textarea value={text} className="form-control" onClick={clearTextarea} onChange={changeUp} id="exampleFormControlTextarea1" rows="5"></textarea>
+  <textarea value={text} placeholder="Enter the text here..." className="form-control" onClick={clearTextarea} onChange={changeUp} id="exampleFormControlTextarea1" rows="5"></textarea>
   <div className="d-flex justify-content-start">
-  <button className='btn btn-danger me-3 mt-3' onClick={convertUppercase} >Convert to Uppercase</button>
-  <button className='btn btn-danger me-3 mt-3' onClick={convertLowercase} >Convert to Lowercase</button>
-
+    <button className='btn btn-danger me-3 mt-3' onClick={convertUppercase} >Convert to Uppercase</button>
+    <button className='btn btn-danger me-3 mt-3' onClick={convertLowercase} >Convert to Lowercase</button>
   </div>
+</div>
+<div className="container mt-3">
+  <h3>Text summary</h3>
+  <p>{text.split(' ').length} of words and {text.length} of charecters.</p>
+  <p>{0.008 * text.split(' ').length} minutes of read.</p>
+  <h3 className='mt-3'>Preview of the Text:</h3>
+  <p>{text}</p>
 </div>
 </>
     )
